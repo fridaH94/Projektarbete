@@ -1,15 +1,20 @@
-public class Customer {
+import java.io.Serializable;
+
+public class Customer implements Serializable{
 
     private String name;
-    static int count = 1;
+
     private String city;
     int id;
+    Cart cart = new Cart();
 
-    public Customer(String name, String city){
+    public Customer(int id, String name, String city){ //Konstruktor
         this.name = name;
-        this.id = count++;
+        this.id = id;
         this.city = city;
     }
+
+    //getters och setters
 
     public String getName(){
         return name;
