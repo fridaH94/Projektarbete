@@ -6,7 +6,7 @@ public class Customer implements Serializable{
 
     private String city;
     int id;
-    Cart cart = new Cart();
+    ShoppingCart cart = new ShoppingCart();
 
     public Customer(int id, String name, String city){ //Konstruktor
         this.name = name;
@@ -40,12 +40,21 @@ public class Customer implements Serializable{
         this.city = city;
     }
 
+    public ShoppingCart getCart() {
+        return cart;
+    }
+
+    public void setCart(ShoppingCart cart) {
+        this.cart = cart;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
                 "name='" + name + '\'' +
                 ", city='" + city + '\'' +
                 ", id=" + id +
+                ", cart=" + cart +
                 '}';
     }
 }
